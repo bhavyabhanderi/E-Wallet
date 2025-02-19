@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/calender.css">
+        <title>E-Wallet</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <div class="header__container">
+                <button class="header__toggle" id="header-toggle">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <div class="search-container" alingn="center">
+                    <input type="text" class="search-input"
+                        placeholder="Search...">
+                    <button class="search-btn"><i
+                            class="ri-search-line"></i></button>
+                </div>
+                <div class="header__left">
+                    <div class="notification">
+                        <a href="notification.html">
+                            <i class="ri-notification-3-line"></i>
+                            <span class="badge">3</span>
+                        </a>
+                    </div>
+
+                    <div class="sidebar__user">
+                        <a href="account.html">
+                            <div class="sidebar__img">
+
+                                <img src="img/profile.jpg" alt="image">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--=============== SIDEBAR ===============-->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar__container">
+                <div class="sidebar__user">
+                    <a href="account.html">
+                        <div class="sidebar__img">
+
+                            <img src="img/profile.jpg" alt="image">
+                        </div>
+                    </a>
+
+                    <div class="sidebar__info">
+                        <h3>Bhavya Bhanderi</h3>
+                        <span>bhavyabhanderi@email.com</span>
+                    </div>
+                </div>
+
+                <div class="sidebar__content">
+                    <div>
+                        <h3 class="sidebar__title">MANAGE</h3>
+
+                        <div class="sidebar__list">
+                            <a href="index.html"
+                                class="sidebar__link  active-link">
+                                <i class="ri-pie-chart-2-fill"></i>
+                                <span>Home</span>
+                            </a>
+
+                            <a href="account.html" class="sidebar__link ">
+                                <i class="ri-wallet-3-fill"></i>
+                                <span>Account</span>
+                            </a>
+
+                            <a href="calender.html" class="sidebar__link">
+                                <i class="ri-calendar-fill"></i>
+                                <span>Calendar</span>
+                            </a>
+
+                            <a href="history.html" class="sidebar__link">
+                                <i class="ri-arrow-up-down-line"></i>
+                                <span>History</span>
+                            </a>
+
+                            <a href="statistic.html" class="sidebar__link">
+                                <i class="ri-bar-chart-box-fill"></i>
+                                <span>Statistics</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="sidebar__title">SETTINGS</h3>
+
+                        <div class="sidebar__list">
+                            <a href="setting.html" class="sidebar__link">
+                                <i class="ri-settings-3-fill"></i>
+                                <span>Settings</span>
+                            </a>
+
+                            <a href="message.html" class="sidebar__link">
+                                <i class="ri-mail-unread-fill"></i>
+                                <span>My Messages</span>
+                            </a>
+
+                            <a href="notification.html" class="sidebar__link">
+                                <i class="ri-notification-2-fill"></i>
+                                <span>Notifications</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar__actions">
+                    <button class="sidebar__link">
+                        <i class="ri-logout-box-r-fill"></i>
+                        <span>Log Out</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!--=============== PAYMENT OPTIONS ===============-->
+        <section class="payment-options">
+            <h2 class="people-title">Quick Payments</h2>
+            <div class="payment-grid">
+                <div class="payment-row">
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-qr-scan-2-line"></i>
+                        <span>Scan any <br> QR code</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-contacts-fill"></i>
+                        <span>Pay <br> Contacts</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-phone-fill"></i>
+                        <span>Pay Phone <br> number</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-bank-card-fill"></i>
+                        <span>Bank <br>Transfer</span>
+                    </a>
+                </div>
+                <div class="payment-row">
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-exchange-dollar-fill"></i>
+                        <span>Pay UPI ID <br> or number</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-arrow-left-right-fill"></i>
+                        <span> Self <br> Transfer</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-bill-fill"></i>
+                        <span>Pay <br> Bills</span>
+                    </a>
+                    <a href="index.html" class="payment-item">
+                        <i class="ri-smartphone-fill"></i>
+                        <span align="center">Mobile <br> Recharge</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== PEOPLE SECTION ===============-->
+        <section class="people-section">
+            <h2 class="people-title">People</h2>
+            <div class="people-grid">
+                <div class="people-row">
+                    <a href="index.html" class="people-item">
+                        <img src="img/user1.jpeg" alt="User">
+                        <span>Amit</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user2.jpeg" alt="User">
+                        <span>Bhavya</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user3.jpeg" alt="User">
+                        <span>Chirag</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user4.jpeg" alt="User">
+                        <span>Darshit</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user5.jpeg" alt="User">
+                        <span>Emma</span>
+                    </a>
+                </div>
+                <div class="people-row">
+                    <a href="index.html" class="people-item">
+                        <img src="img/user6.jpeg" alt="User">
+                        <span>Freya</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user7.jpeg" alt="User">
+                        <span>Gracy</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user8.jpeg" alt="User">
+                        <span>Hemant</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user9.jpeg" alt="User">
+                        <span>Isha</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user10.jpeg" alt="User">
+                        <span>Jay</span>
+                    </a>
+                </div>
+                <div class="people-row">
+                    <a href="index.html" class="people-item">
+                        <img src="img/user11.jpeg" alt="User">
+                        <span>Kruti</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user12.jpeg" alt="User">
+                        <span>Lalit</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user13.jpeg" alt="User">
+                        <span>Manshi</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user14.jpeg" alt="User">
+                        <span>Nensh</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user15.jpeg" alt="User">
+                        <span>Obama</span>
+                    </a>
+                </div>
+                <div class="people-row">
+                    <a href="index.html" class="people-item">
+                        <img src="img/user16.jpeg" alt="User">
+                        <span>Priya</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user17.jpeg" alt="User">
+                        <span>Qeen</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user18.jpeg" alt="User">
+                        <span>Ridham</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user19.jpeg" alt="User">
+                        <span>Sujal</span>
+                    </a>
+                    <a href="index.html" class="people-item">
+                        <img src="img/user20.jpeg" alt="User">
+                        <span>Tina</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--=============== BILL & RECHARGES ===============-->
+        <section class="bill-recharges">
+            <h2 class="people-title">Bill & Recharges</h2>
+            <div class="bill-grid">
+                <a href="index.html" class="bill-item">
+                    <i class="ri-roadster-fill"></i>
+                    <span>FASTag <br> Recharge</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-drop-fill"></i>
+                    <span>Water</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-tv-fill"></i>
+                    <span>DTH/Cable</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-flashlight-fill"></i>
+                    <span>Electricity</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-google-fill"></i>
+                    <span>Google Play</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-bank-card-fill"></i>
+                    <span>Credit Cards</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-gas-station-fill"></i>
+                    <span>Gas Cylinder</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-router-fill"></i>
+                    <span>Broadband/<br>Landline</span>
+                </a>
+                <a href="index.html" class="bill-item">
+                    <i class="ri-smartphone-fill"></i>
+                    <span>Postpaid <br> Mobile</span>
+                </a>
+            </div>
+        </section>
+        <!--=============== MANAGE YOUR MONEY ===============-->
+        <section class="manage-money">
+            <h2 class="money-title">Manage Your Money</h2>
+            <div class="money-grid">
+                <a href="index.html" class="money-item">
+                    <i class="ri-bank-fill"></i>
+                    <div>
+                        <span>Personal Loan</span>
+                        <p>Instant approval & paperless</p>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </a>
+                <a href="index.html" class="money-item">
+                    <i class="ri-copper-coin-fill"></i>
+                    <div>
+                        <span>Gold Loan</span>
+                        <p>Interest rate starting at 0.96% monthly</p>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </a>
+            </div>
+            <div class="money-grid">
+                <!-- See Transaction History -->
+                <a href="history.html" class="money-item">
+                    <i class="ri-file-list-fill"></i>
+                    <div>
+                        <span>See Transaction History</span><br>
+                        <p>Review all your past transactions</p>
+                       
+                        <button class="apply-btn">
+                            See Transaction History</button>
+                    </div>
+                </a>
+                <!-- Check Bank Balance -->
+                <a href="history.html" class="money-item">
+                    <i class="ri-wallet-2-fill"></i>
+                    <div>
+                        <span>Check Bank Balance</span><br>
+                        <p>Get real-time bank balance updates</p>
+                        <button class="apply-btn">Check Balance</button>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

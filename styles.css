@@ -1,0 +1,840 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(225, 100%, 2%);
+  --title-color: hsl(228, 18%, 16%);
+  --text-color: hsl(0, 0%, 4%);
+  --body-color: #faf2f2;
+  --shadow-color: hsla(0, 0%, 5%, 0.1);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Nunito Sans", system-ui;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  all: unset;
+}
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  margin: .75rem;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 30px var(--shadow-color);
+    border-radius: 1rem;
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.header__logo i {
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.header__logo span {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjusts spacing */
+}
+.header__toggle {
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+}
+/* ============== Search bar container ========== */
+.search-container {
+  display: flex;
+  margin-left: 130px;
+    align-items: center;
+    background: lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: none;
+  color: rgb(6, 6, 6);
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.search-btn {
+  background: none;
+    border: none;
+    color: rgb(7, 7, 7);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Notification Icon */
+.notification {
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Menu Button */
+.header__toggle {
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-container {
+      max-width: 250px; /* Smaller Search Bar */
+  }
+}
+/*=============== SIDEBAR ===============*/
+.sidebar {
+  position: fixed;
+  left: -120%;
+  top: 0;
+  bottom: 0;
+  z-index: var(--z-fixed);
+  width: 288px;
+  background-color: var(--body-color);
+  box-shadow: 2px 0 24px var(--shadow-color);
+  padding-block: 1.5rem;
+  margin: .75rem;
+  border-radius: 1rem;
+  transition: left .4s, background-color .4s, width .4s;
+}
+
+.sidebar__container, 
+.sidebar__content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.sidebar__container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar__user {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  column-gap: 1rem;
+  padding-left: 2rem;
+}
+
+.sidebar__img {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+}
+
+.sidebar__img img {
+  position: absolute;
+  width: 50px;
+  bottom: -1px;
+}
+
+.sidebar__info h3 {
+  font-size: var(--normal-font-size);
+  color: var(--title-color);
+  transition: color .4s;
+}
+
+.sidebar__info span {
+  font-size: var(--smaller-font-size);
+}
+
+.sidebar__content {
+  overflow: hidden auto;
+}
+
+.sidebar__content::-webkit-scrollbar {
+  width: .4rem;
+  background-color: hsl(228, 8%, 85%);
+}
+
+.sidebar__content::-webkit-scrollbar-thumb {
+  background-color: hsl(228, 8%, 75%);
+}
+
+.sidebar__title {
+  width: max-content;
+  font-size: var(--tiny-font-size);
+  font-weight: var(--font-semi-bold);
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__list, 
+.sidebar__actions {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.sidebar__link {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  align-items: center;
+  column-gap: 1rem;
+  color: var(--text-color);
+  padding-left: 2rem;
+  transition: color .4s, opacity .4s;
+}
+
+.sidebar__link i {
+  font-size: 1.25rem;
+}
+
+.sidebar__link span {
+  font-weight: var(--font-semi-bold);
+}
+
+.sidebar__link:hover {
+  color: var(--first-color);
+}
+
+.sidebar__actions {
+  margin-top: auto;
+}
+
+.sidebar__actions button {
+  cursor: pointer;
+}
+
+.sidebar__theme {
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.sidebar__theme span {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+/* Show sidebar */
+.show-sidebar {
+  left: 0;
+}
+
+/* Active link */
+.active-link {
+  color: var(--first-color);
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 20px;
+  background-color: var(--first-color);
+}
+/* ============== payments ================= */
+.payment-options, .people-section {
+  margin: 0;
+  padding: 0;
+}
+
+.payment-options {
+  margin-bottom: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.people-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.payment-options + .people-section {
+  margin-top: -10px; /* Adjust this value if needed */
+}
+
+
+.payment-options {
+  width: 75%;
+  margin-left: 360px;
+  background: var(--body-color);
+  padding: 20px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin-top: 150px;
+  border-radius: 10px;
+}
+
+.payment-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+.payment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.payment-row {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.payment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--title-color);
+  font-size: 0.9rem;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: all 0.3s;
+  width: 120px;
+}
+
+.payment-item i {
+  font-size: 24px;
+  color: var(--first-color);
+  margin-bottom: 5px;
+}
+
+.payment-item:hover {
+  transform: translateY(-3px);
+  background: gray;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .payment-row {
+      flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-row {
+      flex-direction: column;
+      align-items: center;
+      margin-left:20px ;
+  }
+}
+/* ============== people photos ==============*/
+.people-section {
+  width: 75%;
+  margin-left: 360px;
+  background: var(--body-color);
+  padding: 20px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin-top: 150px;
+  border-radius: 10px;
+  margin-top: 50px; 
+}
+
+.people-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.people-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.people-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.people-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--title-color);
+  font-size: 0.9rem;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: all 0.3s;
+  width: 100px;
+}
+
+.people-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 2px solid var(--first-color);
+}
+
+.people-item:hover {
+  transform: translateY(-3px);
+  background: gray;
+  color: rgb(6, 6, 6);
+}
+
+@media (max-width: 768px) {
+  .people-row {
+      flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .people-row {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+/* ============== Manage money=============== */
+/* Manage Your Money Section */
+.manage-money {
+  padding: 20px;
+  margin-top: 20px;
+  width: 75%;
+  margin-left: 360px;
+  background: var(--body-color);
+  padding: 20px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+
+.money-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+.money1-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+.money-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #333;
+  width: 48%;
+}
+
+.money-item i {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #070707;
+}
+
+.money-item div {
+  text-align: left;
+}
+
+.money-item span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.money-item p {
+  font-size: 14px;
+  color: gray;
+  margin: 5px 0;
+}
+
+.apply-btn {
+  background: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.apply-btn:hover {
+  background: #0056b3;
+}
+/* ============== Bills icons================ */
+.bill-recharges {
+  padding: 20px;
+  margin-top: 20px; 
+  width: 75%;
+  margin-left: 360px;
+  background: var(--body-color);
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+.bill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 items per row */
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.bill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffdfd;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.bill-item i {
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #0e0e0f;
+}
+
+.bill-item:hover {
+  background-color: gray;
+  color: black;
+  transform: scale(1.05);
+}
+/*=============== WALLET SECTION ===============*/
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-color); /* Match header background */
+  color: var(--title-color); /* Match header text color */
+  padding: 1rem 1.5rem; /* Adjust padding for consistency */
+  border-radius: 1rem; /* Rounded corners like the header */
+  box-shadow: 0 2px 24px var(--shadow-color); /* Match header shadow */
+  margin: 1.5rem; /* Match header spacing */
+}
+
+.balance-box {
+  text-align: center;
+  flex: 1; /* Ensure equal width for sections */
+  padding: 0 1rem; /* Add spacing between text */
+}
+
+.balance-box:not(:last-child) {
+  border-right: 1px solid var(--shadow-color); /* Subtle divider between sections */
+}
+
+.balance-box h2 {
+  font-size: var(--normal-font-size); /* Match header font size */
+  font-weight: var(--font-semi-bold); /* Use consistent font weight */
+  margin-bottom: 0.5rem;
+  color: var(--title-color); /* Consistent text color */
+}
+
+.balance-amount {
+  font-size: 1.25rem; /* Adjust for a balanced look */
+  font-weight: var(--font-semi-bold); /* Match header font weight */
+  margin: 0;
+  color: var(--first-color); /* Use primary color for balance numbers */
+}
+
+/* Styling for Eye icon */
+.ri-eye-line {
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+  color: #000;
+}
+
+/* Optional: Eye icon when hidden */
+.ri-eye-line.hidden {
+  color: #ccc;
+}
+
+.recent-transactions {
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--body-color);
+  border-radius: 1rem;
+  box-shadow: 0 2px 24px var(--shadow-color); /* Add shadow effect */
+}
+
+.recent-transactions h2 {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.transaction-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.transaction-item {
+  flex: 1 1 calc(50% - 1rem); /* Adjust width for two items per row */
+  padding: 1rem;
+  background-color: var(--body-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px var(--shadow-color); /* Add slight shadow */
+  text-align: center;
+}
+
+.transaction-item p {
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-item strong {
+  font-weight: bold;
+}
+
+.transaction-item span {
+  font-style: italic;
+}
+/* Styling for Credit (CR) */
+.credit {
+  color: #4caf50; /* Green */
+  font-weight: bold;
+}
+
+/* Styling for Debit (DR) */
+.debit {
+  color: #f44336; /* Red */
+  font-weight: bold;
+}
+
+/* Styling for the balance value */
+.balance {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 20px;
+  color: var(--title-color);
+}
+
+/* Styling for transaction items */
+.transaction-item {
+  margin-bottom: 10px;
+}
+
+/* Make sure the transaction and balance are aligned side by side */
+.transaction-item p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling the transaction date */
+.transaction-date {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-right: 10px;
+  font-style: italic;
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+  .header__container {
+    padding-inline: 1rem;
+  }
+
+  .sidebar {
+    width: max-content;
+  }
+  .sidebar__info, 
+  .sidebar__link span {
+    display: none;
+  }
+  .sidebar__user, 
+  .sidebar__list, 
+  .sidebar__actions {
+    justify-content: center;
+  }
+  .sidebar__user, 
+  .sidebar__link {
+    grid-template-columns: max-content;
+  }
+  .sidebar__user {
+    padding: 0;
+  }
+  .sidebar__link {
+    padding-inline: 2rem;
+  }
+  .sidebar__title {
+    padding-inline: .5rem;
+    margin-inline: auto;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1150px) {
+  .header {
+    margin: 1rem;
+    padding-left: 340px;
+    transition: padding .4s;
+  }
+  .header__container {
+    height: calc(var(--header-height) + 2rem);
+    padding-inline: 2rem;
+  }
+  .header__logo {
+    order: 1;
+  }
+
+  .sidebar {
+    left: 0;
+    width: 316px;
+    margin: 1rem;
+  }
+  .sidebar__info, 
+  .sidebar__link span {
+    transition: opacity .4s;
+  }
+  .sidebar__user, 
+  .sidebar__title {
+    transition: padding .4s;
+  }
+
+  /* Reduce sidebar */
+  .show-sidebar {
+    width: 90px;
+  }
+  .show-sidebar .sidebar__user {
+    padding-left: 1.25rem;
+  }
+  .show-sidebar .sidebar__title {
+    padding-left: 0;
+    margin-inline: auto;
+  }
+  .show-sidebar .sidebar__info, 
+  .show-sidebar .sidebar__link span {
+    opacity: 0;
+  }
+
+  .main {
+    padding-left: 340px;
+    padding-top: 8rem;
+    transition: padding .4s;
+  }
+
+  /* Add padding left */
+  .left-pd {
+    padding-left: 114px;
+  }
+}

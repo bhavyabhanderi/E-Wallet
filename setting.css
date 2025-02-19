@@ -1,0 +1,248 @@
+.settings__box {
+    padding: 1.5rem;
+    background-color: var(--body-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+  }
+  
+  .settings__title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--title-color);
+  }
+  
+  .settings__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .settings__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--body-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .settings__item:hover {
+    background-color: hsl(228, 85%, 95%);
+  }
+  
+  .settings__item i {
+    font-size: 1.25rem;
+    color: hsl(0, 0%, 2%);
+  }
+  
+  .settings__item span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  
+  /* ========= notification block ========= */
+  
+  
+  .popup-container-stnoti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Show the popup when targeted */
+  .popup-container-stnoti:target {
+    display: flex;
+  }
+  
+  /* Popup content */
+  .popup-content-stnoti {
+    background: var(--body-color);
+    width: 90%;
+    max-width: 500px;
+    /* Increased width */
+    padding: 30px;
+    /* Increased padding */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Close button */
+  .popup-close-stnoti {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  /* Title */
+  .popup-title-stnoti {
+    font-size: 22px;
+    /* Slightly larger title font */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Notification options */
+  .notification-option-stnoti {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .notification-option-stnoti span {
+    font-size: 16px;
+  }
+  
+  /* Switch */
+  .switch-stnoti {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .switch-stnoti input {
+    display: none;
+  }
+  
+  .slider-stnoti {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+  }
+  
+  .slider-stnoti:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked+.slider-stnoti {
+    background-color: rgb(5, 106, 47);
+  }
+  
+  input:checked+.slider-stnoti:before {
+    transform: translateX(20px);
+  }
+  
+  /* Center the footer text */
+  .modal-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    /* Adjust color if needed */
+  }
+  
+  /* Style for the popup modal body */
+  .modal-body.scrollable {
+    max-height: 300px;
+    /* Adjust height as needed */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    padding-right: 10px;
+    /* Add padding to avoid scroll bar overlap */
+  }
+  
+  /* Optional: Customize scrollbar for better appearance */
+  .modal-body.scrollable::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-body.scrollable::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  .modal-body.scrollable::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+  }
+  
+  .modal-body ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .modal-body ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Feedback form styling */
+  #feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  
+  
